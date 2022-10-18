@@ -30,6 +30,11 @@ app.use((req, res, next) => {
   next();
 });
 
+// cors related
+app.options('/*', (_, res) => {
+    res.sendStatus(200);
+});
+
 //setting different types of api call endpoints
 app.use("/api/students", studentsRoutes);
 app.use("/api/users", userRoutes);
